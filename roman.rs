@@ -179,9 +179,9 @@ fn multiplication(x: &str, y: &str) -> String {
     let mut zp = String::with_capacity(xp.len() * yp.len());
 
     for a in xp.chars().into_iter() {
-	for b in (&yp).chars() {
-	    zp.push_str(&pi(a, b));
-	}
+        for b in (&yp).chars() {
+            zp.push_str(&pi(a, b));
+        }
     }
 
     minimize_all(&reduce_all(&group(&zp)))
@@ -201,7 +201,7 @@ fn main() {
         match args[2].as_str() {
             "+" => addition(&args[1], &args[3]),
             "-" => substraction(&args[1], &args[3]),
-	    "*" => multiplication(&args[1], &args[3]),
+            "*" => multiplication(&args[1], &args[3]),
             _ => {
                 eprintln!("unknown operator: `{}`", args[2]);
                 exit(1);
